@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — JiT Finco</title>
+<meta name="description" content="Privacy Policy for JiT Finco — how we collect, use, and protect your data. Operated by JiT Techlabs Pvt. Ltd." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    /* Core — white + BP green palette */
+    --white: #FFFFFF;
+    --off-white: #FAFBFA;            /* alt section bg, barely different from white */
+    --ink: #0A0F0D;                   /* near-black with slight green cast */
+    --ink-soft: #2C3330;
+    --green: #009639;                 /* BP green — Pantone 355 C */
+    --green-deep: #007A2E;            /* hover / darker accent */
+    --green-dark: #063E1D;            /* deep green — footer, marquee ribbon */
+    --green-soft: #E8F5EC;            /* very pale green tint */
+
+    /* Back-compat aliases so existing class names keep working */
+    --cream: var(--white);
+    --cream-deep: var(--off-white);
+    --paper: var(--white);
+    --saffron: var(--green);
+    --saffron-deep: var(--green-deep);
+
+    --rule: rgba(10, 15, 13, 0.10);
+    --rule-strong: rgba(10, 15, 13, 0.24);
+    --muted: rgba(10, 15, 13, 0.58);
+
+    /* Typography — unified around Plus Jakarta Sans to match the logo */
+    --display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --serif: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;  /* same family; italic+weight used for emphasis */
+    --mono: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    font-feature-settings: 'ss02', 'ss03';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.22;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a { color: inherit; text-decoration: none; }
+  em { font-style: normal; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    padding: 10px 0;
+    position: relative;
+    z-index: 30;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  .ticker-wrap { display: flex; gap: 40px; overflow: hidden; flex: 1; }
+  .ticker {
+    display: flex;
+    gap: 56px;
+    animation: ticker 38s linear infinite;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .ticker span { display: inline-flex; align-items: center; gap: 10px; opacity: 0.85; }
+  .ticker .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; box-shadow: 0 0 8px rgba(0,150,57,0.55); }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .topbar-meta { display: flex; gap: 28px; opacity: 0.75; flex-shrink: 0; }
+  .topbar-meta span::before { content: '◆ '; color: var(--green); margin-right: 6px; font-size: 8px; vertical-align: middle; }
+
+  /* ============ NAV ============ */
+  nav.main {
+    position: sticky; top: 0;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule);
+    z-index: 25;
+    padding: 18px 0;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 0;
+    line-height: 1;
+  }
+  .logo-mark {
+    height: 44px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .logo:hover .logo-mark { transform: rotate(-3deg) scale(1.04); }
+  .logo small {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-left: 4px;
+    align-self: center;
+    border-left: 1px solid var(--rule-strong);
+    padding-left: 10px;
+    line-height: 1.3;
+  }
+  /* On green/dark backgrounds, turn the logo pure white */
+  .logo.on-dark .logo-mark {
+    filter: brightness(0) invert(1);
+  }
+  .logo.on-dark small {
+    color: rgba(255, 255, 255, 0.6);
+    border-left-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .nav-links {
+    display: flex; gap: 36px; align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .nav-links a {
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 0; height: 1px; background: var(--saffron);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    display: flex; gap: 12px; align-items: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .btn-ghost {
+    color: var(--ink);
+    border-color: var(--rule-strong);
+  }
+  .btn-ghost:hover { background: var(--green); color: var(--white); border-color: var(--green); }
+  .btn-solid {
+    background: var(--green); color: var(--white);
+  }
+  .btn-solid:hover { background: var(--green-deep); color: var(--white); }
+  .btn .arrow { transition: transform 0.25s; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  .menu-toggle { display: none; }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 80px 0 100px;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 7px 14px 7px 10px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    background: var(--paper);
+    margin-bottom: 36px;
+  }
+  .hero-eyebrow .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--saffron);
+    box-shadow: 0 0 0 0 var(--saffron);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 150, 57, 0.55); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 150, 57, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 150, 57, 0); }
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(44px, 7vw, 100px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    max-width: 1100px;
+  }
+  .hero h1 em {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: -0.03em;
+  }
+  .hero h1 .stamp {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.18em;
+    letter-spacing: 0.18em;
+    color: var(--white);
+    background: var(--green);
+    padding: 8px 14px 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    transform: rotate(-2deg) translateY(-12px);
+    border-radius: 4px;
+    line-height: 1;
+    margin: 0 8px;
+  }
+
+  .hero-bottom {
+    margin-top: 56px;
+    max-width: 720px;
+  }
+  .hero-lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 560px;
+  }
+  .hero-lede strong { font-weight: 600; color: var(--ink); }
+
+  .hero-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+  .btn-lg { padding: 18px 32px; font-size: 16px; }
+
+  .hero-aside {
+    border-left: 1px solid var(--rule-strong);
+    padding-left: 36px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  .hero-aside .label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .hero-aside .value {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-aside .value sup { font-size: 0.45em; vertical-align: top; color: var(--green); font-weight: 600; }
+  .hero-aside hr { border: none; border-top: 1px solid var(--rule); margin: 22px 0; }
+
+  /* ============ MARQUEE BAND ============ */
+  .marquee-band {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 22px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .marquee {
+    display: flex;
+    gap: 64px;
+    animation: marquee 42s linear infinite;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .marquee em {
+    font-family: var(--display);
+    color: #6EE896;
+    font-weight: 700;
+  }
+  .marquee .sep {
+    color: #4BD97A;
+    font-size: 18px;
+    align-self: center;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ SECTION SCAFFOLDING ============ */
+  section { padding: 110px 0; position: relative; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    margin-bottom: 70px;
+    align-items: start;
+  }
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--saffron-deep);
+    padding-top: 14px;
+    border-top: 1px solid var(--ink);
+  }
+  .section-tag .num { color: var(--ink); margin-right: 14px; font-weight: 500; }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(34px, 4.3vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .section-title em {
+    font-family: var(--display);
+    color: var(--green);
+    font-weight: 700;
+  }
+
+
+  /* ============ SOLUTION FOLDS ============ */
+  .sol-fold {
+    padding: 110px 0;
+    position: relative;
+  }
+  .sol-fold.alt { background: var(--off-white); }
+
+  .sol-fold-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .sol-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin-bottom: 28px;
+  }
+  .sol-tag::after {
+    content: '';
+    width: 48px;
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+  }
+
+  .sol-copy h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    margin-bottom: 22px;
+    max-width: 560px;
+  }
+  .sol-copy h2 em {
+    font-family: var(--display);
+    font-weight: 800;
+    color: var(--green);
+  }
+  .sol-copy .lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+  .sol-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Data side — the 2×2 feature grid */
+  .sol-data {
+    padding-top: 8px;
+  }
+  .sol-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .sol-fold.alt .sol-grid { background: var(--white); }
+
+  .sol-cell {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    transition: background 0.25s;
+  }
+  .sol-cell:nth-child(2n) { border-right: none; }
+  .sol-cell:nth-child(n+3) { border-bottom: none; }
+  .sol-cell:hover { background: var(--green-soft); }
+
+  .sol-cell-num {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--green);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .sol-cell-num sup {
+    font-size: 0.45em;
+    font-weight: 600;
+    margin-left: 2px;
+    vertical-align: top;
+  }
+  .sol-cell-label {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 4px;
+  }
+  .sol-cell-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Fold divider line (between folds on same bg) */
+  .sol-fold + .sol-fold:not(.alt),
+  .sol-fold.alt + .sol-fold.alt {
+    border-top: 1px solid var(--rule);
+  }
+
+
+  .sol-cta {
+    margin-top: 48px;
+    padding-top: 0;
+  }
+  @media (max-width: 960px) {
+    .sol-fold { padding: 70px 0; }
+    .sol-fold-inner {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+    .sol-grid { max-width: 520px; }
+  }
+  @media (max-width: 560px) {
+    .sol-grid { grid-template-columns: 1fr; }
+    .sol-cell { border-right: none !important; }
+    .sol-cell:nth-child(3) { border-bottom: 1px solid var(--rule); }
+  }
+
+  
+
+  /* ============ AUDIENCES ============ */
+  .audiences {
+    background: var(--paper);
+  }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule-strong);
+    border: 1px solid var(--rule-strong);
+  }
+  .audience {
+    background: var(--paper);
+    padding: 44px 36px 40px;
+    position: relative;
+    transition: background 0.4s;
+    display: flex; flex-direction: column;
+    min-height: 460px;
+  }
+  .audience:hover { background: var(--cream); }
+  .audience-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 32px;
+  }
+  .audience-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .audience-icon {
+    width: 44px; height: 44px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    color: var(--ink);
+    transition: all 0.3s;
+  }
+  .audience:hover .audience-icon {
+    background: var(--saffron);
+    border-color: var(--saffron);
+    transform: rotate(45deg);
+  }
+  .audience h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin-bottom: 10px;
+  }
+  .audience h3 em {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--green);
+  }
+  .audience .pitch {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 26px;
+  }
+  .audience ul {
+    list-style: none;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+  .audience li {
+    padding: 14px 0;
+    border-top: 1px dashed var(--rule);
+    display: flex; gap: 14px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .audience li::before {
+    content: '→';
+    color: var(--saffron-deep);
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+  .audience .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  /* ============ STATS ============ */
+  .stats {
+    background: var(--green);
+    color: var(--white);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats::before {
+    content: '';
+    position: absolute;
+    top: -150px; right: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.14) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .stats .section-tag { color: var(--white); border-color: rgba(255,255,255,0.5); opacity: 0.9; }
+  .stats .section-tag .num { color: var(--white); }
+  .stats .section-title { color: var(--white); }
+  .stats .section-title em { color: #EAFFEF; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 30px;
+  }
+  .stat {
+    padding: 36px 28px 36px 0;
+    border-right: 1px solid rgba(255,255,255,0.22);
+    position: relative;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+  .stat-num em {
+    font-family: var(--display);
+    font-weight: 600;
+    color: #EAFFEF;
+    font-size: 0.5em;
+    vertical-align: top;
+    margin-left: 4px;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .stat-bar {
+    height: 2px;
+    background: var(--white);
+    width: 0;
+    margin-top: 22px;
+    transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity: 0.85;
+  }
+
+  /* ============ WHY US ============ */
+  .why { background: var(--cream); }
+  .pillar {
+    display: grid;
+    grid-template-columns: 120px 1fr 1.1fr;
+    gap: 48px;
+    padding: 56px 0;
+    border-top: 1px solid var(--rule-strong);
+    align-items: start;
+    transition: padding 0.3s;
+  }
+  .pillar:last-child { border-bottom: 1px solid var(--rule-strong); }
+  .pillar:hover { padding: 64px 0; }
+  .pillar-num {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    line-height: 1;
+    text-transform: uppercase;
+    padding-top: 14px;
+  }
+  .pillar h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .pillar h3 em {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--green);
+  }
+  .pillar p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .pillar-tags {
+    margin-top: 20px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .pillar-tags span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    color: var(--ink);
+  }
+
+  /* ============ SECTORS ============ */
+  .sectors { background: var(--paper); }
+  .sector-cloud {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    align-items: center;
+  }
+  .sector {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(20px, 2.6vw, 32px);
+    letter-spacing: -0.025em;
+    padding: 10px 22px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    background: var(--white);
+    transition: all 0.25s;
+    cursor: default;
+    line-height: 1.1;
+  }
+  .sector:hover {
+    background: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+  .sector.accent {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+    font-weight: 700;
+  }
+  .sector.accent:hover { background: var(--green-deep); color: var(--white); }
+  .sector-more {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-left: 12px;
+    align-self: center;
+  }
+
+  /* ============ PARTNERS ============ */
+  .partners {
+    background: var(--cream-deep);
+    padding: 80px 0 100px;
+    overflow: hidden;
+  }
+  .partners-head {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .partners-head .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--saffron-deep);
+    margin-bottom: 16px;
+  }
+  .partners-head h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(26px, 3.3vw, 40px);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .partners-head h3 em { font-family: var(--display); font-weight: 700; color: var(--green); }
+
+  .logo-marquee {
+    display: flex;
+    gap: 64px;
+    animation: marquee 50s linear infinite;
+    width: max-content;
+    align-items: center;
+  }
+  .logo-cell {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    opacity: 0.55;
+    white-space: nowrap;
+    padding: 10px 0;
+    transition: opacity 0.25s;
+  }
+  .logo-cell:hover { opacity: 1; }
+
+  .logo-cell .mk { color: var(--saffron-deep); }
+
+  /* ============ CTA ============ */
+  .cta {
+    background: var(--cream);
+    padding: 130px 0;
+  }
+  .cta-card {
+    background: var(--green);
+    color: var(--white);
+    padding: 90px 80px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cta-card .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #EAFFEF;
+    margin-bottom: 28px;
+  }
+  .cta-card h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(36px, 4.8vw, 66px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+  .cta-card h2 em {
+    font-family: var(--display);
+    font-weight: 800;
+    color: #EAFFEF;
+  }
+  .cta-side p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 28px;
+    max-width: 360px;
+  }
+  .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-saffron {
+    background: var(--white);
+    color: var(--green);
+    border-color: var(--white);
+    font-weight: 600;
+  }
+  .btn-saffron:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .btn-outline-light {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .btn-outline-light:hover { background: var(--white); color: var(--green); border-color: var(--white); }
+
+
+  /* ============ CONTACT FORM ============ */
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 440px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .form-group label {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 600;
+  }
+  .form-group input {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    color: var(--white);
+    outline: none;
+    transition: all 0.25s ease;
+    -webkit-appearance: none;
+  }
+  .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+    font-weight: 400;
+  }
+  .form-group input:focus {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  }
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 32px;
+    background: var(--white);
+    color: var(--green);
+    border: none;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 6px;
+    align-self: flex-start;
+  }
+  .form-submit:hover {
+    background: var(--ink);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  .form-submit .submit-arrow {
+    transition: transform 0.3s;
+  }
+  .form-submit:hover .submit-arrow {
+    transform: translateX(4px);
+  }
+  .form-submit.sending {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  .form-success {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    color: #EAFFEF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    animation: panel-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .form-success.show {
+    display: flex;
+  }
+
+  @media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+    .cta-form { max-width: 100%; }
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 52px 0 32px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    align-items: start;
+  }
+  .foot-brand .logo { margin-bottom: 24px; }
+  .foot-brand p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.55;
+    max-width: 320px;
+    margin-bottom: 24px;
+  }
+
+
+
+
+  .foot-gst {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.02em;
+  }
+  .foot-nav h4 {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .foot-nav ul { list-style: none; }
+  .foot-nav li { margin-bottom: 8px; }
+  .foot-nav a {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
+    transition: color 0.2s;
+  }
+  .foot-nav a:hover { color: #9FEFB8; }
+
+  @media (max-width: 560px) {
+    .footer-top { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+
+  .foot-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.55);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .foot-bottom a:hover { color: #9FEFB8; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 960px) {
+    .topbar-meta { display: none; }
+    .nav-links { display: none; }
+    .menu-toggle {
+      display: grid; place-items: center;
+      width: 42px; height: 42px;
+      border: 1px solid var(--rule-strong);
+      border-radius: 50%;
+    }
+    .nav-cta .btn-ghost { display: none; }
+    .hero { padding: 50px 0 70px; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 40px; margin-top: 44px; }
+    .hero-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--rule-strong); padding-top: 32px; }
+    section { padding: 70px 0; }
+    .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 44px; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.22); padding: 28px 0; }
+    .stat:nth-child(2) { border-right: none; }
+    .pillar { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+    .pillar:hover { padding: 36px 0; }
+    .pillar-num { font-size: 48px; }
+    .cta-card { grid-template-columns: 1fr; padding: 50px 32px; gap: 40px; }
+
+    .marquee { font-size: 26px; gap: 40px; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+    .stats-grid { grid-template-columns: 1fr; }
+
+    .hero h1 .stamp { display: inline-block; transform: rotate(-2deg) translateY(-6px); font-size: 12px; padding: 5px 9px; }
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+
+  /* ============ LEGAL PAGE ============ */
+  .legal-hero {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .legal-hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(32px, 4vw, 48px);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .legal-hero .updated {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .legal-body {
+    padding: 60px 0 100px;
+  }
+  .legal-content {
+    max-width: 760px;
+  }
+  .legal-content h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin-top: 48px;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .legal-content h2:first-child { margin-top: 0; }
+  .legal-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .legal-content ul {
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+  .legal-content li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .legal-content a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .legal-content a:hover { color: var(--green-deep); }
+  .legal-content strong { font-weight: 600; color: var(--ink); }
+
+</style>
+</head>
+<body>
+
+<nav class="main">
+  <div class="wrap nav-inner">
+    <a href="jit-finco.html" class="logo"><img src="data:image/png;base64,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" alt="JiTFin Co." class="logo-mark"></a>
+    <div class="nav-links">
+      <a href="jit-finco.html#about">About</a>
+      <a href="jit-finco.html#solutions">Solutions</a>
+      <a href="jit-finco.html#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="jit-finco.html#contact" class="btn btn-solid">Talk to us <span class="arrow">→</span></a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M0 1h18M0 6h18M0 11h12" stroke="currentColor" stroke-width="1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<section class="legal-hero">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: April 17, 2026</div>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="wrap">
+    <div class="legal-content">
+
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy describes how <strong>JiT Techlabs Pvt. Ltd</strong> ("Company", "we", "us", or "our"), operating under the brand <strong>JiT Finco</strong>, collects, uses, stores, and protects your personal and business information when you access or use our website <strong>www.jitfin.co</strong> and the JiT Finco platform ("Platform").</p>
+      <p>This policy is published in compliance with the Information Technology Act, 2000 and the rules made thereunder, including the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and is aligned with the Digital Personal Data Protection Act, 2023 ("DPDPA") to the extent applicable.</p>
+
+      <h2>2. Information We Collect</h2>
+      <p>We collect the following categories of information:</p>
+
+      <p><strong>a) Information you provide directly</strong></p>
+      <ul>
+        <li>Contact information: name, email address, mobile number, company name (via contact forms)</li>
+        <li>Business identity documents: PAN, Aadhaar (where applicable for KYC), GST registration certificates, business registration documents</li>
+        <li>Financial documents: bank statements, GST returns, financial statements, invoices, and purchase orders submitted as part of the loan facilitation process</li>
+        <li>Account credentials: login information if you create an account on the Platform</li>
+      </ul>
+
+      <p><strong>b) Information collected automatically</strong></p>
+      <ul>
+        <li>Device and browser information: IP address, browser type, operating system, device identifiers</li>
+        <li>Usage data: pages visited, time spent on pages, click patterns, referring URLs</li>
+        <li>Cookies and similar technologies: session cookies, analytics cookies, and functional cookies (see Section 7)</li>
+      </ul>
+
+      <p><strong>c) Information from third parties</strong></p>
+      <ul>
+        <li>Credit information from credit bureaus (with your consent and through our lending partners)</li>
+        <li>Business verification data from public registries (MCA, GSTN)</li>
+        <li>Information provided by anchor corporates as part of supply chain finance programme onboarding</li>
+      </ul>
+
+      <h2>3. How We Use Your Information</h2>
+      <p>We use your information for the following purposes:</p>
+      <ul>
+        <li>To facilitate supply chain finance transactions between you and lending partners</li>
+        <li>To verify your identity and assess eligibility for financial products</li>
+        <li>To process and transmit your loan applications and supporting documents to lending partners</li>
+        <li>To communicate with you about your applications, account, and our services</li>
+        <li>To comply with legal and regulatory obligations, including KYC and AML requirements</li>
+        <li>To improve, maintain, and secure the Platform</li>
+        <li>To analyse usage patterns and optimise the user experience</li>
+        <li>To send you relevant updates about our services (with your consent, where required)</li>
+      </ul>
+
+      <h2>4. Sharing of Information</h2>
+      <p>We may share your information with the following parties:</p>
+      <ul>
+        <li><strong>Lending partners:</strong> banks and NBFCs to whom your loan application and supporting documents are submitted for credit assessment and disbursal</li>
+        <li><strong>Anchor corporates:</strong> the corporate entities through whose supply chain programme you are applying, to the extent necessary for programme administration</li>
+        <li><strong>Service providers:</strong> third-party vendors who assist with technology infrastructure, data analytics, communication services, and customer support, bound by confidentiality obligations</li>
+        <li><strong>Regulatory and legal authorities:</strong> where required by law, regulation, legal process, or governmental request</li>
+        <li><strong>Credit bureaus:</strong> to support credit assessment processes conducted by our lending partners</li>
+      </ul>
+      <p>We do not sell your personal information to any third party.</p>
+
+      <h2>5. Data Storage and Security</h2>
+      <p>Your data is stored on secure servers located in India. We implement reasonable security practices and procedures consistent with industry standards, including:</p>
+      <ul>
+        <li>Encryption of data in transit (TLS/SSL) and at rest</li>
+        <li>Access controls limiting data access to authorised personnel only</li>
+        <li>Regular security audits and vulnerability assessments</li>
+        <li>Firewalls and intrusion detection systems</li>
+      </ul>
+      <p>While we take reasonable measures to protect your information, no method of electronic storage or transmission is 100% secure. We cannot guarantee absolute security.</p>
+
+      <h2>6. Data Retention</h2>
+      <p>We retain your information for as long as necessary to fulfil the purposes for which it was collected, including:</p>
+      <ul>
+        <li>Active account or application data: for the duration of your use of the Platform plus 5 years after your last interaction</li>
+        <li>Financial and KYC documents: as required by applicable laws and RBI guidelines (typically 5–8 years after the completion of the relevant transaction)</li>
+        <li>Contact form submissions: 2 years from the date of submission, unless a business relationship is established</li>
+      </ul>
+      <p>After the applicable retention period, data is securely deleted or anonymised.</p>
+
+      <h2>7. Cookies</h2>
+      <p>The Platform uses cookies and similar tracking technologies to enhance your experience. The types of cookies we use include:</p>
+      <ul>
+        <li><strong>Essential cookies:</strong> required for the Platform to function correctly</li>
+        <li><strong>Analytics cookies:</strong> to understand how visitors interact with the Platform (e.g., Google Analytics)</li>
+        <li><strong>Functional cookies:</strong> to remember your preferences and settings</li>
+      </ul>
+      <p>You can manage your cookie preferences through your browser settings. Disabling certain cookies may affect the functionality of the Platform.</p>
+
+      <h2>8. Your Rights</h2>
+      <p>Subject to applicable law, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right to access:</strong> request a copy of the personal data we hold about you</li>
+        <li><strong>Right to correction:</strong> request correction of inaccurate or incomplete data</li>
+        <li><strong>Right to erasure:</strong> request deletion of your personal data, subject to legal retention requirements</li>
+        <li><strong>Right to withdraw consent:</strong> withdraw your consent for data processing at any time, which may affect our ability to provide services</li>
+        <li><strong>Right to grievance redressal:</strong> raise a complaint regarding the processing of your data</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the details in Section 11.</p>
+
+      <h2>9. Third-Party Links</h2>
+      <p>The Platform may contain links to third-party websites, including those of our lending partners. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. Updated versions will be posted on this page with a revised "Last updated" date. Your continued use of the Platform after changes are posted constitutes your acceptance of the revised policy.</p>
+
+      <h2>11. Grievance Officer</h2>
+      <p>In accordance with the Information Technology Act, 2000 and the rules made thereunder, the details of our Grievance Officer are:</p>
+      <p>
+        Email: <a href="mailto:hello@jitfin.co">hello@jitfin.co</a><br>
+        Phone: <a href="tel:+919980621635">+(91) 9980-621-635</a><br>
+        Address: 137, 7th Main Road, 2nd Stage, Indiranagar, Bengaluru, Karnataka, 560038
+      </p>
+      <p>We will acknowledge your query or complaint within 48 hours and endeavour to resolve it within 30 days of receipt.</p>
+
+      <h2>12. Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy, please reach out to us at <a href="mailto:hello@jitfin.co">hello@jitfin.co</a>.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a href="jit-finco.html" class="logo on-dark"><img src="data:image/png;base64,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" alt="JiTFin Co." class="logo-mark"></a>
+        <div class="foot-info">
+          <p>India's trusted platform for Supply Chain Finance — Connecting Lenders, Anchors and MSMEs together.</p>
+          <div>JiT Finco</div>
+          <div>JiT Techlabs Pvt. Ltd</div>
+          <div>137, 7th Main Road, 2nd Stage,<br>Indiranagar, Bengaluru, Karnataka, 560038</div>
+          <div><a href="tel:+919980621635">+(91) 9980-621-635</a></div>
+          <div><a href="mailto:hello@jitfin.co">hello@jitfin.co</a></div>
+          <div><a href="https://www.jitfin.co" target="_blank">www.jitfin.co</a></div>
+          <div>GST: 29AAECJ4499F1Z4</div>
+        </div>
+      </div>
+      <div class="foot-nav">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="jit-finco.html#about">About Us</a></li>
+          <li><a href="jit-finco.html#solutions">Distributor &amp; Dealer Finance</a></li>
+          <li><a href="jit-finco.html#svf">Supplier &amp; Vendor Finance</a></li>
+          <li><a href="jit-finco.html#pid">Purchase Invoice Discounting</a></li>
+          <li><a href="jit-finco.html#sid">Sales Invoice Discounting</a></li>
+          <li><a href="jit-finco.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 JiT Techlabs Pvt. Ltd. · All rights reserved.</div>
+      <div>
+        <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="terms-of-use.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
